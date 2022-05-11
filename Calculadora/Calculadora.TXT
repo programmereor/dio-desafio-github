@@ -1,0 +1,61 @@
+Criando uma calculadora em C++:
+
+ #include <iostream>
+ #include <stdlib.h>
+ #include <locale.h>
+
+ using namespace std;
+
+ void soma (float x, float y);
+ void sub (float x, float y);
+ void vzs (float x, float y);
+ void div (float x, float y);
+
+
+ int main()
+ {  setlocale(LC_ALL,"portuguese");
+    int tipo;
+    float *n1,*n2;
+    n1 = (float*) malloc(sizeof(float));
+    n2 = (float*) malloc(sizeof(float));
+
+
+    cout << "Digite o primeiro número:\n";
+    cin >> *n1;
+    cout << "Digite o segundo número:\n";
+    cin >> *n2;
+    cout << "Digite 1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão:\n";
+    cin >> tipo;
+
+    if(tipo == 1)
+        soma(*n1,*n2);
+        else if(tipo == 2)
+            sub(*n1,*n2);
+        else if (tipo == 3)
+            vzs(*n1,*n2);
+        else if(tipo == 4)
+            div(*n1,*n2);
+        else
+            cout << "\nTipo inválido\n";
+
+
+
+    return 0;
+ }
+
+    void soma (float x, float y)
+    {
+        cout << "\nSoma é igual a: " << x + y << endl;
+    }
+    void sub (float x, float y)
+    {
+        cout << "\nSubtração é igual a: " << x - y << endl;
+    }
+    void vzs (float x, float y)
+    {
+        cout << "\nMultiplicação é igual a: " << x * y << endl;
+    }
+    void div (float x, float y)
+    {
+        cout << "\nDivisão é igual a: " << x / y << endl;
+    }
